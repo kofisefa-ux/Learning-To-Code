@@ -1,15 +1,20 @@
-def check():
-    if height >= 140:
-        return True
-    elif height >= 130 and with_adult == "yes":
-        return True
-    else:
-        return False
-    
 height = int(input("Enter your height in cm: "))
-age = int(input("Enter your age: "))
-with_adult = input("Are you with an adult? (yes/no): ").strip().lower()
-if check() == True:
-    print("You are allowed to ride the Thunder Mountain!")
+
+# 1. Catch impossible inputs first
+if height <= 0:
+    print("Error: Height cannot be zero or negative!")
+elif height < 50:
+    print("Error: Please re-enter a valid height.")
+
+# 2. Do query for real heights
+elif height >= 140:
+    print("You are tall enough to ride the Thunder Mountain!")
+elif height >= 130:
+    with_adult = input("Are you with an adult? (yes/no): ").strip().lower()
+    if with_adult == "yes":
+        print("You can ride the Thunder Mountain with an adult!")
+    else:
+        print("Sorry, you have to go to the kiddie coaster.")
 else:
+    # if you are less than 130cm
     print("Sorry, you have to go to the kiddie coaster.")
