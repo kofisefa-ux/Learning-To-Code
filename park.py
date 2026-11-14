@@ -8,10 +8,10 @@ elif height < 50:
 
 # 2. Do query for real heights
 elif height >= 140:
-    print("You are tall enough to ride the Thunder Mountain!")
+    print("You can ride the Thunder Mountain!")
 elif height >= 130:
     with_adult = input("Are you with an adult? (yes/no): ").strip().lower()
-    if with_adult == "yes":
+    if with_adult == "yes" or with_adult == "y" and height >= 130:
         print("You can ride the Thunder Mountain with an adult!")
     else:
         print("Sorry, you have to go to the kiddie coaster.")
