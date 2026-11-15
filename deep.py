@@ -1,8 +1,14 @@
-def main():
-    x = input("What is the Answer to the Great Question of Life, the Universe, and Everything? ")
-    if x == "42" or x == "forty-two" or x == "forty two":
-        print("Yes")
-    else:
-        print("No")
+# Prompt the user for a greeting, strip leading whitespace, and convert to lowercase
+greeting = input("Greeting: ").strip().lower()
 
-main()
+# Check if the greeting starts with "hello"
+if greeting.startswith("hello"):
+    print("$0")
+
+# Check if the greeting starts with an "h" (and not "hello")
+elif greeting.startswith("h"):
+    print("$20")
+
+# Otherwise, output $100
+else:
+    print("$100")
